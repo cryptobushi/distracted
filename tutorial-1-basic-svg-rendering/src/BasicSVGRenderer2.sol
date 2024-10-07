@@ -8,7 +8,7 @@ import {Random, RandomCtx} from './Random.sol';
  * @author Eto Vass
  */
 
-contract BasicSVGRenderer2 {
+contract BasicSVGRenderer {
     function renderSVG(uint tokenId) public pure returns (string memory) {
         RandomCtx memory ctx = Random.initCtx(tokenId);
 
