@@ -141,3 +141,13 @@ tmp*
 # foundry
 **/out
 **/cache
+
+# ssh keys
+ssh_key
+ssh_key.pub
+
+#replit
+.replit
+replit.nix
+
+

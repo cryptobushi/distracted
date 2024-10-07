@@ -19,7 +19,7 @@ contract BasicSVGRenderer {
 
         for (uint i=0; i < 50; i++) { 
             int cx = Random.randRange(ctx, 0, 512);
-            int cy = Random.randRange(ctx, 0, 512);
+            int cy = Random.randRange(ctx, 0, 51);
             int r = Random.randRange(ctx, 24, 64);
             int sat = Random.randRange(ctx, 0, 100);            
             int opacity = Random.randRange(ctx, 10, 99);
