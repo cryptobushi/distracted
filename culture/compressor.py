@@ -65,7 +65,7 @@ def process_and_save_image(input_image_path, output_image_path, base64_output_pa
 
 
 # Example usage:
-input_image_path = "images/elon.png"  # Input file
+input_image_path = "images/milton.png"  # Input file
 output_image_path = "compressed/output_image.png"  # Compressed output file path
 base64_output_path = "base64/output_base64.txt"  # Base64 output file path
 
