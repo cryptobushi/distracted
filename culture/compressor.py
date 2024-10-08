@@ -10,7 +10,7 @@ def process_and_save_image(input_image_path, output_image_path, base64_output_pa
     threshold = 128
     img = img.point(lambda p: p > threshold and 255)  # Binary threshold to black/white
 
-    # Convert to black and transparent (RGBA mode)
+    # Convert to black and transparent (RGBA mode) to do artsy manipulations
     img = img.convert("RGBA")
     datas = img.getdata()
     new_data = []
@@ -24,6 +24,9 @@ def process_and_save_image(input_image_path, output_image_path, base64_output_pa
 
     # Quantize the image using FASTOCTREE method (valid for RGBA)
     img = img.quantize(colors=2, method=Image.FASTOCTREE)
+
+    # After artsy manipulation, convert image to 'P' mode for indexed color
+    img = img.convert("P", palette=Image.ADAPTIVE)
 
     # Optimize the PNG compression level
     compressed_image = io.BytesIO()
@@ -65,7 +68,7 @@ def process_and_save_image(input_image_path, output_image_path, base64_output_pa
 
 
 # Example usage:
-input_image_path = "images/milton.png"  # Input file
+input_image_path = "images/hottake.png"  # Input file
 output_image_path = "compressed/output_image.png"  # Compressed output file path
 base64_output_path = "base64/output_base64.txt"  # Base64 output file path
 
