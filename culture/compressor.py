@@ -34,7 +34,7 @@ def process_and_save_image(input_image_path, output_image_path, base64_output_pa
     compressed_image = io.BytesIO()
     while True:
         # Resize the image if needed to reduce the size
-        if width > 5 and height > 5:
+        if width > 100 and height > 100:
             img = img.resize((width, height), Image.LANCZOS)
 
         # Save the image in PNG format and check size
@@ -70,9 +70,9 @@ def process_and_save_image(input_image_path, output_image_path, base64_output_pa
 
 
 # Example usage:
-input_image_path = "crow.png"  # Replace with your input file path (WEBP, JPEG, etc.)
-output_image_path = "output_image.png"  # Path where the output image will be saved
-base64_output_path = "output_base64.txt"  # Path to save the base64 string
+input_image_path = "images/elon.png"  # Replace with your input file path (WEBP, JPEG, etc.)
+output_image_path = "compressed/output_image.png"  # Path where the output image will be saved
+base64_output_path = "base64/output_base64.txt"  # Path to save the base64 string
 
 target_size_kb = 1  # Set your target size, in this case, 1KB
 
