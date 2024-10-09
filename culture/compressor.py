@@ -64,11 +64,15 @@ def process_and_save_image(input_image_path, output_image_path, base64_output_pa
     with open(base64_output_path, 'w') as f:
         f.write(img_base64)
 
+    # Calculate and print the final file size in KB
+    final_size_kb = len(stripped_image.getvalue()) / 1024
+    print(f"Final image file size: {final_size_kb:.2f} KB")
+
     return img_base64
 
 
 # Example usage:
-input_image_path = "images/hottake.png"  # Input file
+input_image_path = "images/post2.png"  # Input file
 output_image_path = "compressed/output_image.png"  # Compressed output file path
 base64_output_path = "base64/output_base64.txt"  # Base64 output file path
 
